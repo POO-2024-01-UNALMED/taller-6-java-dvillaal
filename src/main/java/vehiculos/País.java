@@ -33,4 +33,32 @@ public class País {
         this.vehículos.add(vehículo);
         this.vehiculosCreados++;
     }
+
+    public static País paisMasVendedor () {
+
+        País país;
+
+        for (País i : países) {
+
+            int k = 0;
+
+            for (País j: países) {
+
+                if (j.vehículos.size() > i.vehículos.size() && i != j) {
+
+                    k = 1;
+                    break;
+                }
+            }
+
+            if (k == 0) {
+                país = i;
+
+                return (país);
+            }
+        }
+
+        país = null;
+        return (país);
+    }
 }

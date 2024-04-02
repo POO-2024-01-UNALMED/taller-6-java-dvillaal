@@ -43,4 +43,34 @@ public class Fabricante {
         this.país.añadirVehiculo(vehículo);
         this.vehiculosCreados++;
     }
+
+    public static Fabricante fabricaMayorVentas () {
+
+        Fabricante fabrica;
+
+        for (Fabricante i : fabricantes) {
+
+            int k = 0;
+
+            for (Fabricante j: fabricantes) {
+
+                if (j.vehículos.size() > i.vehículos.size() && i != j) {
+
+                    k = 1;
+                    break;
+                }
+
+            }
+
+            if (k == 0) {
+                fabrica = i;
+
+                return (fabrica);
+            }
+
+        }
+
+        fabrica = null;
+        return (fabrica);
+    }
 }
