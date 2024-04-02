@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Fabricante {
     private String nombre;
-    private País país;
+    private Pais pais;
     private int vehiculosCreados;
-    private ArrayList<Vehículo> vehículos = new ArrayList<Vehículo>();
+    private ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
     private static ArrayList<Fabricante> fabricantes;
 
-    public Fabricante(String nombre, País país){
+    public Fabricante(String nombre, Pais pais){
         this.nombre = nombre;
-        this.país = país;
+        this.pais = pais;
 
         if (fabricantes == null){
             fabricantes = new ArrayList<Fabricante>();
@@ -27,20 +27,20 @@ public class Fabricante {
         this.nombre = nombre;
     }
 
-    public País getPaís(){
-        return país;
+    public Pais getPais(){
+        return pais;
     }
-    public void setPaís(País país){
-        this.país = país;
+    public void setPais(Pais pais){
+        this.pais = pais;
     }
 
     public int getVehiculosCreados(){
         return vehiculosCreados;
     }
 
-    public void añadirVehiculo(Vehículo vehículo){
-        this.vehículos.add(vehículo);
-        this.país.añadirVehiculo(vehículo);
+    public void agregarVehiculo(Vehiculo vehiculo){
+        this.vehiculos.add(vehiculo);
+        this.pais.agregarVehiculo(vehiculo);
         this.vehiculosCreados++;
     }
 
@@ -54,7 +54,7 @@ public class Fabricante {
 
             for (Fabricante j: fabricantes) {
 
-                if (j.vehículos.size() > i.vehículos.size() && i != j) {
+                if (j.vehiculos.size() > i.vehiculos.size() && i != j) {
 
                     k = 1;
                     break;
